@@ -5,21 +5,21 @@
             "title": "CEO and Founder",
             "name": "John Smith",
             "description": "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
-            "profile": "/team/prof.png",
+            "profile": "/team/c1.png",
             "link": "/"
         },
         {
             "title": "Director of Operations",
             "name": "Jane Doe",
             "description": "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
-            "profile": "/team/prof.png",
+            "profile": "/team/c2.png",
             "link": "/"
         },
         {
             "title": "Senior SEO Specialist",
             "name": "Michael Brown",
             "description": "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
-            "profile": "/team/prof.png",
+            "profile": "/team/c3.png",
             "link": "/"
         }
 
