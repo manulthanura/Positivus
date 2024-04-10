@@ -3,7 +3,7 @@
         "id": 1,
         "name1": "Search engine",
         "name2": "optimization",
-        "background": "h-[310px] p-[50px] bg-zinc-100 rounded-[45px] shadow border border-zinc-900 justify-between items-center flex text-black",
+        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/01.svg"
@@ -12,7 +12,7 @@
         "id": 2,
         "name1": "Pay-per-click",
         "name2": "advertising",
-        "background": "h-[310px] p-[50px] bg-lime rounded-[45px] shadow border border-zinc-900 justify-between items-center flex text-black",
+        "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/02.svg"
@@ -21,7 +21,7 @@
         "id": 3,
         "name1": "Social Media",
         "name2": "Marketing",
-        "background": "h-[310px] p-[50px] bg-black rounded-[45px] shadow border border-zinc-900 justify-between items-center flex text-white",
+        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow border border-black justify-between items-center flex text-white",
         "arrow": "./services/aw.svg",
         "link": "./",
         "image": "./services/03.svg"
@@ -30,7 +30,7 @@
         "id": 4,
         "name1": "Email",
         "name2": "Marketing",
-        "background": "h-[310px] p-[50px] bg-zinc-100 rounded-[45px] shadow border border-zinc-900 justify-between items-center flex text-black",
+        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/04.svg"
@@ -39,7 +39,7 @@
         "id": 5,
         "name1": "Content",
         "name2": "Creation",
-        "background": "h-[310px] p-[50px] bg-lime rounded-[45px] shadow border border-zinc-900 justify-between items-center flex text-black",
+        "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/05.svg"
@@ -48,7 +48,7 @@
         "id": 6,
         "name1": "Analytics and",
         "name2": "Tracking",
-        "background": "h-[310px] p-[50px] bg-black rounded-[45px] shadow border border-zinc-900 justify-between items-center flex text-white",
+        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow border border-black justify-between items-center flex text-white",
         "arrow": "./services/aw.svg",
         "link": "./",
         "image": "./services/06.svg"
