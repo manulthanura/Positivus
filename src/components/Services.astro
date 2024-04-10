@@ -19,7 +19,7 @@ import servicesData from './Data/services.json';
 
         <!-- card start-->
         {
-        servicesData.map(({ name1, name2, background, arrow, link, image} ) => (
+        servicesData.map(({ background, name1, name2, arrow, link, image} ) => (
         <div class={background}>
             <div class="flex-col justify-center items-start gap-[93px] inline-flex">
                 <div class="flex-col justify-start items-start flex">
@@ -44,7 +44,6 @@ import servicesData from './Data/services.json';
         ))
         }
         <!-- card end-->
-        
     </div>
 </div>
 
