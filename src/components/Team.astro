@@ -1,0 +1,89 @@
+---
+import Container from "./Container.astro"
+import teamData from './Data/team.json';
+---
+<Container>
+<div class="relative flex flex-col items-center md:flex-row">
+    <div class="row items-center py-5 md:pr-16 md:w-6/12 md:py-10">
+        <div class="text-center md:text-left space-y-3 bg-lime">
+            <h2 class="text-4xl font-medium leading-none sm:text-6xl">Our Working Process</h2>
+        </div>
+    </div>
+    <div class="flex items-center py-5 md:w-6/12 md:py-10">
+        <p class="text-xl font-normal leading-7 text-center md:text-left">Step-by-Step Guide to Achieving Your Business Goals</p>
+    </div>
+</div>
+
+<div id="accordion-open" data-accordion="close" class="text-black grid gap-4 my-6">
+    {
+    teamData.process.map(({ id, hid, bid, target, title, description} ) => (
+    <h2 id={hid}>
+    <div class="w-full px-14 py-10 bg-white focus:bg-lime rounded-[45px] shadow border border-black flex-col justify-start items-start gap-7 inline-flex">
+        <button type="button" class="w-full flex justify-between items-center" data-accordion-target={target} aria-expanded="true" aria-controls={bid}>
+            <div class="justify-start items-center gap-6 flex">
+                <h2 class="text-xl md:text-6xl font-medium">{id}</h2>
+                <h3 class="text-lg md:text-3xl font-medium">{title}</h3>
+            </div>
+            <div>
+                <img data-accordion-icon src="/team/plus.svg" alt="" class="justify-items-end w-10 h-10" aria-hidden="true"/>
+            </div>
+        </button>
+        <div class="text-lg font-normal" id={bid} aria-labelledby={hid}>
+            <hr class="w-full border border-black mb-6"/>
+            <p class="mb-2 text-gray-500 text-sm md:text-lg">{description}</p>
+        </div>
+    </div>
+    </h2>     
+    ))
+    }
+</div>
+
+<div class="relative flex flex-col items-center md:flex-row">
+    <div class="row items-center py-5 md:pr-16 md:w-2/12 md:py-10">
+        <div class="text-center md:text-left space-y-3 bg-lime">
+            <h2 class="text-4xl font-medium leading-none sm:text-6xl">Team</h2>
+        </div>
+    </div>
+    <div class="flex items-center py-5 md:w-10/12 md:py-10">
+        <p class="text-xl font-normal leading-7 text-center md:text-left">Meet the skilled and experienced team behind our successful digital marketing strategies</p>
+    </div>
+</div>
+
+<div class="flex-row items-center py-5" id="team">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4">
+    {
+    teamData.team.map(({ title, description, name, link, profile} ) => (
+    <div class="h-[331px] px-[35px] py-10 bg-white rounded-[45px] shadow border border-zinc-900 flex-col justify-start items-start gap-2.5 inline-flex text-black">
+        <div class="flex-col justify-start items-start gap-7 flex">
+            <div class="self-stretch justify-start items-start inline-flex">
+                <div class="grow shrink basis-0 justify-start items-center gap-8 flex">
+                    <div class="h-[102.82px] left-0 top-0 relative">
+                        <img src="/team/prof.png" alt={name} class="absolute"/>
+                        <img src="/team/vector.svg" alt="vector" class=""/>
+                    </div>
+                    <div class="flex-col justify-end items-start inline-flex">
+                        <div class="text-lg font-normal">{title}</div>
+                        <div class="text-xl font-medium">{name}</div>
+                    </div>
+                </div>
+                <a class="top-0 right-0" href={link}>
+                    <img src="/team/lng.svg" alt="vector"/>
+                </a>
+            </div>
+            <hr class="w-full border border-black"/>
+            <p class="text-sm md:text-lg">{description}</p>
+        </div>
+    </div>
+    ))
+    }
+    </div>
+</div>
+<div class="w-full justify-center md:justify-end items-center inline-flex">
+    <button class="px-8 py-5 bg-zinc-900 hover:bg-white rounded-2xl text-center text-white hover:text-black border text-xl font-normal leading-7">See all team
+    </button>
+</div>
+
+
+
+
+</Container>
