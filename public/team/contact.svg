@@ -5,7 +5,7 @@
 <style type="text/css">
 	.st0{fill:#FFFFFF;filter:url(#Adobe_OpacityMaskFilter);}
 	
-		.st1{mask:url(#path-1-outside-1_341_618_00000005974524879395838240000011496076637815834275_);fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+		.st1{mask:url(#path-1-outside-1_341_618_00000155105583336680456640000004050069933611986061_);fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st2{fill:#B9FF66;}
 	.st3{fill:#191A23;}
 </style>
@@ -14,7 +14,7 @@
 		<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 	</filter>
 </defs>
-<mask maskUnits="userSpaceOnUse" x="41.6" y="0.4" width="650" height="648.3" id="path-1-outside-1_341_618_00000005974524879395838240000011496076637815834275_">
+<mask maskUnits="userSpaceOnUse" x="41.6" y="0.4" width="650" height="648.3" id="path-1-outside-1_341_618_00000155105583336680456640000004050069933611986061_">
 	<rect x="40.7" y="-0.5" class="st0" width="651" height="650"/>
 	<path d="M366.6,162.1L387.1,0.5l-0.2,162.8L427.4,5.6L407,167.2l60-151.5l-40.5,157.9L505,30.6l-60.2,151.5l95.9-131.9l-78.7,142.9
 		L573.6,74.3l-95.8,131.7l125.6-103.8L491.8,220.9l137.7-87.2L503.7,237.5l147.6-69.4l-137.7,87.2L668.7,205l-147.6,69.4l160.2-30.6
