@@ -1,0 +1,24 @@
+---
+import Container from "./Container.astro"
+---
+<footer class="bg-lime bg-fixed bg-bottom text-black">
+    <Container>
+    <div class="py-6">
+        <div class="flex flex-col items-center justify-between md:flex-row">
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img class="w-auto" src="/Logo.svg" alt="Logo">
+            </div>
+            <div class="flex mt-4 md:m-0">
+                <div class="-mx-4">
+                    @ <span id="currentYear"></span> Positivus | Made with Astro</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </Container>
+</footer>
+
+<script is:inline>
+    const year = new Date().getFullYear();
+    document.getElementById("currentYear").innerHTML = `${year}`;
+</script>
