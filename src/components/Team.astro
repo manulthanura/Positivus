@@ -1,6 +1,19 @@
 ---
 import Container from "./Container.astro"
 import teamData from './Data/team.json';
+import Collapse from "./Collapse.astro";
+const process = [
+  {
+    label: "Consultation",
+    content:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    label: "Research and Development",
+    content:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+];
 ---
 <Container>
 <div class="relative flex flex-col items-center md:flex-row">
@@ -14,7 +27,19 @@ import teamData from './Data/team.json';
     </div>
 </div>
 
-<div id="accordion-open" data-accordion="close" class="text-black grid gap-4 my-6">
+  <div class="my-6">
+    <div class="space-y-10">
+      {
+        teamData.process.map((process, key) => (
+          <Collapse label={process.label} index={key + 1}>
+            {process.content}
+          </Collapse>
+        ))
+      }
+    </div>
+  </div>
+
+<!-- <div id="accordion-open" data-accordion="close" class="text-black grid gap-4 my-6">
     {
     teamData.process.map(({ id, hid, bid, target, title, description} ) => (
     <h2 id={hid}>
@@ -36,7 +61,7 @@ import teamData from './Data/team.json';
     </h2>     
     ))
     }
-</div>
+</div> -->
 
 <div class="relative flex flex-col items-center md:flex-row">
     <div class="row items-center py-5 md:pr-16 md:w-2/12 md:py-10">
