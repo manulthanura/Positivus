@@ -1,0 +1,45 @@
+---
+import Container from "../../components/Container.astro"
+import Layout from '../../layouts/Layout.astro';
+import articlesData from '../../components//Data/articles.json';
+
+export async function getStaticPaths() {
+  return articlesData.map(({ id, title, publish_date, description, author, authorImage}) => {
+    return {
+      params: { id },
+      props: { id, title, publish_date, description, author, authorImage},
+    };
+  });
+}
+const { title, publish_date, description, author, authorImage} = Astro.props;
+export const prerender = true;
+
+---
+
+<Layout title="Welcome to My site">
+	<main class="space-y-40 mb-40 pt-24">
+	<Container>
+        <section class="bg-white">
+            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                <div class="font-light text-gray-500 sm:text-lg">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">{title}</h2>
+                    <p class="mb-4">{description}</p>
+                    <div class="flex justify-between items-center mt-6">
+                        <div class="flex items-center space-x-4">
+                          <img class="w-7 h-7 rounded-full" src={authorImage} alt={author + " cover"} />
+                          <span class="font-medium">
+                              {author}
+                          </span>
+                        </div>
+                        <span class="text-sm">{publish_date}</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+                </div>
+            </div>
+        </section>
+    </Container>
+	</main>
+</Layout>
