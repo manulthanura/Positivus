@@ -26,6 +26,9 @@ export default {
 		  900: "#191A23",
 		},
 	  },
+	  boxShadow:{
+        'card':'0px 5px 0px 0px #191A23'
+      },
 	  extend: {
 		fontFamily: {
 			SpaceGrotesk: ["Space Grotesk", "sans-serif"],

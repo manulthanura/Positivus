@@ -1,0 +1,50 @@
+---
+const { label, index = null } = Astro.props;
+---
+
+<div class="group outline-none accordion-section" tabindex="1">
+  <div class="group group-focus:bg-lime group-focus:shadow-none shadow-card bg-zinc-100 group-focus:rounded-b-none group-focus:rounded-t-3xl rounded-3xl flex justify-between px-4 py-3 items-center transition-colors ease duration-500 cursor-pointer pr-10 relative">
+    <div class="flex items-center group-focus:text-black px-10 pt-10 w-full transition ease duration-500">
+      <div class="flex pb-10 gap-5 w-full items-center">
+        <div class="flex justify-between w-full items-center rouded-full">
+          <div class="flex items-center gap-5">
+            {
+              index && (
+                <>
+                  <p class="text-6xl font-medium flex items-center">
+                    {index}
+                  </p>
+                  <p class="lg:text-3xl text-lg">{label}</p>
+                </>
+              )
+            }
+          </div>
+          <div class="rounded-full after:h-[2px] relative accodion-chevron border-black md:border-2 flex md:items-center md:bg-zinc-100 h-12 w-12"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="group-focus:max-h-screen max-h-0 shadow-card rounded-b-3xl bg-zinc-100 group-focus:bg-lime px-4 overflow-hidden transition ease duration-500"
+  >
+    <p class="text-justify text-black p-10">
+      <slot />
+    </p>
+  </div>
+</div>
+
+<style>
+    .accodion-chevron::after{
+        content: "";
+        @apply h-[70%] w-[8px] transform transition-transform bg-black absolute left-1/2 -translate-x-1/2;
+    }
+    .accodion-chevron::before{
+        content: "";
+        @apply h-[70%] w-[8px] rotate-90 transform bg-black absolute left-1/2 -translate-x-1/2;
+    }
+    .group:focus-within .accodion-chevron::after {
+        @apply rotate-90;
+    }
+</style>

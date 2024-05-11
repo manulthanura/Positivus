@@ -11,6 +11,7 @@ const navLinks = [
 import Container from "./Container.astro"
 ---
 
+<header class="mt-20">
 <nav class="w-full top-0 left-0 z-50 fixed bg-white">
   <Container>
     <div class="flex flex-wrap items-center justify-between mx-auto py-3">
@@ -44,8 +45,9 @@ import Container from "./Container.astro"
     </div>
   </Container>
 </nav>
+</header>
 
-<script>
+<script is:inline>
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar-default');
 

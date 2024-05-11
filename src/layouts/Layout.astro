@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -18,11 +19,11 @@ import Footer from '../components/Footer.astro';
       content="A beautiful and functional landing page design created specifically for digital marketing agencies. With its clean and modern design, Positivus is the perfect template to showcase your agency's services and case studies to potential clients. Built with astro and tailwindcss"
     />
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <ViewTransitions />
   </head>
-  <body class="bg-white font-SpaceGrotesk space-y-20">
+  <body class="bg-white font-SpaceGrotesk">
     <Navbar />
     <slot />
     <Footer/>
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
   </body>
 </html>
