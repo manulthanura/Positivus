@@ -27,26 +27,32 @@
     "process":
     [
         {
+            "index": 1,
             "label": "Consultation",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
+            "index": 2,
             "label": "Research",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
+            "index": 3,
             "label": "Implementation",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
+            "index": 4,
             "label": "Optimization",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
+            "index": 5,
             "label": "Reporting",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
+            "index": 6,
             "label": "Improvement",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         }
