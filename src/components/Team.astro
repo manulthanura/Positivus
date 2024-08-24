@@ -2,7 +2,7 @@
 import Container from "./Container.astro"
 import Topic from "./Topic.astro";
 import teamData from './Data/team.json';
-import Collapse from "./Collapse.astro";
+import Accordion from "./Accordion.astro";
 
 ---
 <Container>
@@ -13,11 +13,15 @@ import Collapse from "./Collapse.astro";
 <div class="my-6">
     <div class="space-y-10">
         {
-        teamData.process.map((process, key) => (
-            <Collapse label={process.label} index={key + 1}>
-            {process.content}
-            </Collapse>
-        ))
+            teamData.process.map((item) => {
+                return (
+                <Accordion
+                    index= {item.index}
+                    title={item.label}
+                    description={item.content}
+                />
+                );
+            })
         }
     </div>
 </div>

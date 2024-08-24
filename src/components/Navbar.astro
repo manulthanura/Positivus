@@ -5,8 +5,10 @@ const navLinks = [
   { href: '/#services', label: 'Services' },
   { href: '/#projects', label: 'Use Cases' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/articles', label: 'Blog'},
 ];
+
+const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'Request a quote' };
 
 import Container from "./Container.astro"
 ---
@@ -32,14 +34,14 @@ import Container from "./Container.astro"
             </li>
             ))}
             <li>
-                <a class="md:hidden px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href="https://github.com/manulthanura/Positivus" target="_blank">
-                  <h2 class="text-center text-xl font-normal leading-7">Request a quot</h2>
+                <a class="md:hidden px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href={navButton.href} target="_blank">
+                  <h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
                 </a>
             </li>
         </ul>
       </div>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <a class="px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href="https://github.com/manulthanura/Positivus" target="_blank"><h2 class="text-center text-xl font-normal leading-7">Request a quot</h2>
+        <a class="px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href={navButton.href} target="_blank"><h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
         </a>
       </div>
     </div>
