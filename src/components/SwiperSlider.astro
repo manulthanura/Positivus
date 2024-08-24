@@ -1,0 +1,152 @@
+---
+const slides = [
+  { index: 1, name: "John Johnson", description: "Marketing dierector at XYZ" },
+  { index: 2, name: "Ana Banana", description: "Marketing dierector at XYZ" },
+  {
+    index: 3,
+    name: "Camilo Corintio",
+    description: "Marketing dierector at XYZ",
+  },
+  { index: 4, name: "Karla Kaz", description: "Marketing dierector at XYZ" },
+  { index: 5, name: "Johanna Jana", description: "Marketing dierector at XYZ" },
+];
+---
+
+<div
+  id="ProjectSlider"
+  class="swiper mt-10"
+  style={{
+    "--swiper-pagination-color": "#B9FF66",
+    "--swiper-pagination-bullet-inactive-color": "#fff",
+    "--swiper-pagination-bullet-inactive-opacity": "1",
+    "--swiper-pagination-bullet-size": "19px",
+    "--swiper-pagination-bullet-horizontal-gap": "10px",
+  }}
+>
+  <div class="swiper-wrapper mt-[84px] mb-[124px]" data-cursor="swipe">
+    {
+      slides.map((slide) => (
+        <div
+          class="swiper-slide text-white flex flex-col"
+          role="group"
+          aria-label={`${slide.index} / ${slides.length}`}
+        >
+          <div class="flex flex-col justify-center items-center py-[48px] px-6 sm:px-[52px]">
+            <p class="bubble">
+              "We have been working with Positivus for the past year and have
+              seen a significant increase in website traffic and leads as a
+              result of their efforts. The team is professional, responsive, and
+              truly cares about the success of our business. We highly recommend
+              Positivus to any company looking to grow their online presence."
+            </p>
+          </div>
+          <div class="w-full px-10 sm:px-20 ">
+            <div class="text-lime text-base md:text-xl font-medium">{slide.name}</div>
+            <div>{slide.description}</div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex justify-around lg:justify-center mb-[68px] lg:gap-[189px]">
+    <div class="swiper-button-prev w-7 h-7 sm:w-10 sm:h-10">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+        ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          fill="#ffffff"
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+        ></path></svg
+      >
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next w-7 h-7 sm:w-10 sm:h-10 rotate-180">
+      <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 448 512"
+        ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          fill="#ffffff"
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+        ></path></svg
+      >
+    </div>
+  </div>
+</div>
+<script>
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import Swiper from "swiper";
+  import { Pagination, Navigation } from "swiper/modules";
+  import { register } from "swiper/element/bundle";
+  register();
+
+  Swiper.use([Pagination, Navigation]);
+
+  new Swiper("#ProjectSlider", {
+    modules: [Pagination, Navigation],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true,
+    autoplay: false,
+    grabCursor: false,
+    mousewheel: false,
+    slidesPerView: 2,
+    centeredSlides: true,
+    spaceBetween: 50,
+    breakpoints: {
+      1024: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    },
+  });
+</script>
+<style>
+  .bubble {
+    position: relative;
+    padding: 8%;
+    background-color: black;
+    color: white;
+    border-radius: 45px;
+    border: 1px solid #B9FF66;
+  }
+  .bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px; /* Adjust this value to move the arrow up or down */
+    left: 50px; /* Adjust this value to move the arrow left or right */
+    border-width: 22px; /* Adjust this value to change the size of the arrow */
+    border-style: solid;
+    border-color: black transparent transparent black;
+  }
+  .bubble:before {
+    content: "";
+    position: absolute;
+    bottom: -40px; /* This should be 2px more than the bottom value of .bubble:after */
+    left: 48px; /* This should be 1px less than the left value of .bubble:after */
+    border-width: 20px; /* Adjust this to match the border-width of .bubble:after */
+    border-style: solid;
+    border-color: #B9FF66 transparent transparent #B9FF66;
+  }
+  .swiper-wrapper {
+    position: relative;
+  }
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 500ms ease-in-out;
+  }
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    position: static !important;
+  }
+</style>
