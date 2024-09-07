@@ -115,3 +115,8 @@
     width: auto !important;
     position: static !important;
   }
+
+/* Some design */
+.bg-lime {
+  background-color: #B9FF66;
+}
