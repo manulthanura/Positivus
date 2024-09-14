@@ -20,27 +20,27 @@ import Container from "./Container.astro"
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/Logo.svg" class="h-8" alt="Logo" />
       </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 " aria-controls="navbar-default" aria-expanded="false">
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 " aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
       </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white ">
+      <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-white ">
             {navLinks.map(link => (
             <li>
-                <a href={link.href} class="block py-2 px-3 text-black rounded md:bg-transparent md:p-0">{link.label}</a>
+                <a href={link.href} class="block py-2 px-3 text-black rounded lg:bg-transparent lg:p-0">{link.label}</a>
             </li>
             ))}
             <li>
-                <a class="md:hidden px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href={navButton.href} target="_blank">
+                <a class="lg:hidden px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href={navButton.href} target="_blank">
                   <h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
                 </a>
             </li>
         </ul>
       </div>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
         <a class="px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href={navButton.href} target="_blank"><h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
         </a>
       </div>
