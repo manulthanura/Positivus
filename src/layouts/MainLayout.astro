@@ -1,0 +1,34 @@
+---
+import Footer from "../components/ui/Footer.astro";
+import Navbar from "../components/ui/Navbar.astro";
+import MainHead from "./MainHead.astro";
+import "../styles/global.css";
+
+const { ...props } = Astro.props;
+---
+
+<html lang="en">
+  <MainHead {...props} />
+  <style>
+    html.lenis {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+  </style>
+  <script src="../utils/lenis"></script>
+  <body class="bg-white font-grotesk">
+    <main>
+      <Navbar />
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>

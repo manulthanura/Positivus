@@ -1,0 +1,21 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="404">
+	<main class="space-y-20">
+        <div class="relative flex flex-col-reverse items-center justify-center md:flex-row" id="hero">
+            <div class="row items-center py-5 md:pb-20 md:pt-10">
+                <div class="justify-center flex py-5">
+                    <img src="/404.svg" width="50%" alt="Hero"/>
+                </div>
+                <div class="text-center space-y-10">
+                    <h2 class="text-2xl font-medium leading-none md:text-4xl">Sorry, we couldn't find the page you were looking for</h2>
+                    <a class="px-9 py-5 bg-black hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex" rel="noopener noreferrer"  href="./" target="_blank">
+                        <h2 class="text-center text-xl font-normal leading-7">Go Back Home</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+	</main>
+</MainLayout>

@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Grotesk";
+    src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff"), format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Grotesk";
+    src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff"), format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .font-outline {
+    -webkit-text-stroke: 2.5px black;
+    background-color: transparent;
+  }
+  .font-outline-sm {
+    -webkit-text-stroke: 1.2px black;
+    background-color: transparent;
+  }
+
+  :root {
+    --green: #b9ff66;
+    --black: rgb(0, 0, 0);
+    --dark: #191a23;
+    --gray: #f3f3f3;
+    --white: #ffffff;
+  }
+
+  /* @layer base {
+    * {
+      box-sizing: border-box;
+      font-family: "Grotesk", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 120%;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      h1 {
+        font-size: 2.688rem;
+      }
+
+      h2 {
+        font-size: 2.25rem;
+      }
+
+      h3 {
+        font-size: 1.625rem;
+      }
+
+      h4 {
+        font-size: 1.125rem;
+      }
+    }
+  } */
+
+  @layer components {
+    .btn-primary {
+      @apply bg-dark text-white rounded-lg px-[35px] py-5 transition-all duration-200;
+    }
+    .btn-primary:hover {
+      @apply bg-green text-black transform scale-105;
+    }
+
+    .btn-secondary {
+      @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
+    }
+    .btn-secondary:hover {
+      @apply bg-black text-white border-green transform scale-105;
+    }
+
+    .btn-tertiary {
+      @apply bg-green text-black rounded-lg px-[35px] py-5 transition-all duration-200;
+    }
+    .btn-tertiary:hover {
+      @apply bg-white text-black transform scale-105;
+    }
+
+    .greenhead {
+      @apply bg-green text-black rounded-[7px] px-[7px];
+    }
+
+    .whitehead {
+      @apply bg-white text-black rounded-[7px] px-[7px];
+    }
+
+    .blackhead {
+      @apply bg-black text-white rounded-[7px] px-[7px];
+    }
+  }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* markdown style */
+.content p {
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+.content h2 {
+  margin: 20px 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}

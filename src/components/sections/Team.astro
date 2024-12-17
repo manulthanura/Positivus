@@ -1,0 +1,92 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import TeamCard from "../ui/TeamCard.astro";
+import Section from "./Section.astro";
+
+const description =
+  "Meet the skilled and experienced team behind our successful digital marketing strategies";
+
+// Team images
+import p1 from "../../assets/team/t1.png";
+import p2 from "../../assets/team/t2.png";
+import p3 from "../../assets/team/t3.png";
+import p4 from "../../assets/team/t4.png";
+import p5 from "../../assets/team/t5.png";
+import p6 from "../../assets/team/t6.png";
+
+const team = [
+  {
+    pic: p1,
+    name: "John Smith",
+    role: "CEO and Founder",
+    description:
+      "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p2,
+    name: "Jane Doe",
+    role: "Director of Operations",
+    description:
+      "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p3,
+    name: "Michael Brown",
+    role: "Senior SEO Specialist",
+    description:
+      "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p4,
+    name: "Emily Johnson",
+    role: "PPC Manager",
+    description:
+      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p5,
+    name: "Brian Williams",
+    role: "Social Media Specialist",
+    description:
+      "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p6,
+    name: "Sarah Kim",
+    role: "Content Creator",
+    description:
+      "2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries",
+    link: "https://linkedin.com",
+  },
+];
+---
+
+<Section id="about">
+  <div class="mt-[140px]">
+    <SectionTitle sectionTitle="Team" description={description} />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+    >
+      {
+        team.map((member, index) => (
+          <TeamCard
+            key={index}
+            pic={member.pic}
+            name={member.name}
+            role={member.role}
+            description={member.description}
+            link={member.link}
+          />
+        ))
+      }
+    </div>
+    <div class="flex justify-end mt-10">
+      <button class="btn-primary">See all team</button>
+    </div>
+  </div>
+</Section>

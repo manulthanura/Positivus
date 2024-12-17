@@ -1,0 +1,53 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ArticleCard from "../../components/ui/ArticleCard.astro";
+import SearchForm from "../../components/ui/SearchForm.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const query: string | null = Astro.url.searchParams.get('query');
+
+const allBlogArticles: CollectionEntry<'blog'>[] = await getCollection('blog');
+
+// Filter articles based on query
+const searchResults = allBlogArticles.filter(article => {
+  const titleMatch: boolean = article.data.title
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+    const bodyMatch: boolean = article.body
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+    const slugMatch: boolean = article.slug
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+    return titleMatch || bodyMatch || slugMatch
+});
+---
+
+<MainLayout title="Search Results">
+	<main class="space-y-20">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+
+            <a href="/articles" class="inline-flex items-center font-medium text-black hover:text-green my-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18">
+                  </path>
+              </svg>
+              <span class="ml-1 font-bold text-lg">All Articles</span>
+            </a>
+
+            <br>
+            <SearchForm />
+            <br>
+            <h2 class="text-2xl pb-3 mt-6">Results For <strong>{query}</strong></h2>
+            <div class="grid gap-8 lg:grid-cols-2">
+              {searchResults.map(article => (
+                <ArticleCard article={article} />
+              ))}
+            </div>  
+        </div>
+	</main>
+</MainLayout>

@@ -1,0 +1,15 @@
+---
+const { isUnderline } = Astro.props;
+---
+
+{
+  isUnderline ? (
+    <div class="rounded-[45px] border border-dark shadow-[0px_5px_0px_#191a23]">
+      <slot />
+    </div>
+  ) : (
+    <div class="rounded-[45px]">
+      <slot />
+    </div>
+  )
+}

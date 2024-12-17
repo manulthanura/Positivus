@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+
+const cards = [
+  {
+    index: 0,
+    title:
+      "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
+    link: "https://google.com",
+  },
+  {
+    index: 1,
+    title:
+      "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
+    link: "https://google.com",
+  },
+  {
+    index: 1,
+    title:
+      "For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.",
+    link: "https://google.com",
+  },
+];
+
+import larrow from "../../assets/icon3.svg";
+import SectionTitle from "../ui/SectionTitle.astro";
+---
+
+<Section id="cases">
+  <SectionTitle
+    sectionTitle="Case Studies"
+    description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+  />
+  <div class="flex flex-col lg:flex-row justify-between rounded-[45px] p-1">
+    {
+      cards.map((card) => (
+        <Card>
+          <div class="flex p-[60px] h-full bg-dark text-gray rounded-[45px] m-[1px]">
+            <div class="flex flex-col gap-5">
+              <p>{card.title}</p>
+              <a href={card.link} class="flex items-center gap-[15px]">
+                <span class="text-green">Case Info</span>
+                <picture>
+                  <Image src={larrow} alt="Arrow pointing up right" />
+                </picture>
+              </a>
+            </div>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</Section>
