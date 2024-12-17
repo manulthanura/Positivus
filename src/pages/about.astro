@@ -1,12 +1,12 @@
 ---
-import Container from "../components/Container.astro"
-import Layout from '../layouts/Layout.astro';
-import Team from "../components/Team.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Sponsors from "../components/sections/Sponsors.astro";
+import Services from "../components/sections/Services.astro";
 ---
 
-<Layout title="Welcome to My site">
+<MainLayout title="About us">
 	<main class="space-y-20">
-		<Container>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
             <div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
                 <div class="row items-center py-5 md:pb-20 md:pt-10">
                     <div class="text-center space-y-10">
@@ -18,32 +18,8 @@ import Team from "../components/Team.astro";
                     </div>
                 </div>
             </div>
-            
-            <div class="flex-row items-center">
-                <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="./clients/01.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-                    </div>
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="./clients/02.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-                    </div>
-                    <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-                        <img src="./clients/03.svg" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-                    </div>
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="./clients/04.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-                    </div>
-                    <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-                        <img src="./clients/05.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-                    </div>
-                    <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                        <img src="./clients/06.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-                    </div>
-                </div>
-            </div>
-        </Container>
-        <br>
-        <Team/>
-        <br>
+        </div>
+        <Sponsors />
+        <Services />
 	</main>
-</Layout>
+</MainLayout>

@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+
+import propImg from "../../assets/pics/proposal-pic.png";
+---
+
+<Section>
+  <Card>
+    <div
+      class="flex bg-[#F3F3F3] rounded-[45px] p-[60px] relative mt-[123px] mb-[163px]"
+    >
+      <div class="w-full md:w-[40%] flex flex-col gap-[26px]">
+        <h2 class="text-3xl font-medium">Let's make things happen</h2>
+        <p>
+          Contact us today to learn more about how our digital marketing
+          services can help your business grow and succeed online.
+        </p>
+        <button class="btn-primary">Get your free proposal</button>
+      </div>
+      <picture
+        class="hidden md:flex absolute right-[-10%] lg:right-0 top-[-15%] h-[450px] items-center justify-center"
+      >
+        <Image
+          src={propImg}
+          alt="This is an illustration"
+          class="hidden md:flex lg:h-full lg:w-auto"
+        />
+      </picture>
+    </div>
+  </Card>
+</Section>

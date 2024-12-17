@@ -1,0 +1,23 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import HeroIlust from "../../assets/pics/hero.svg";
+---
+
+<Section id="home">
+<div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
+    <div class="row items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
+        <div class="text-left space-y-3">
+            <h1 class="text-4xl font-medium leading-none md:text-6xl text-center md:text-left">Navigating the <br> digital landscape <br> for success</h1>
+            <p class="mt-6 mb-8 text-lg font-normal leading-7 sm:mb-12 text-center md:text-left md:pr-12">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
+            <div class="w-full justify-center md:justify-start items-center inline-flex">
+                <a href="https://github.com/manulthanura/Positivus" target="_blank" class="px-8 py-5 bg-zinc-900 hover:bg-white rounded-2xl text-center text-white hover:text-black border text-xl font-normal leading-7">Book a consultation
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
+        <Image src={HeroIlust} alt="Hero Ilustration" loading="eager" />
+    </div>
+</div>
+</Section>

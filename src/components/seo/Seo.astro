@@ -1,0 +1,68 @@
+---
+import siteData from "../../data/siteData.json";
+import jsonLDGenerator from "../../utils/jsonLD";
+
+type Props = {
+  // Pass title and description for internal pages
+  // If not given, this defaults to site data
+  // Url is automatic
+  // Robots are optional
+  // Frontmatter triggers a CMS post type
+  title: string;
+  description: string;
+  url: string;
+  image?: { src: string; alt: string };
+  robots?: boolean;
+  frontmatter?: any;
+};
+
+const {
+  title,
+  description,
+  url = Astro.url,
+  image,
+  frontmatter,
+  robots,
+} = Astro.props;
+
+// Again, frontmatter triggers CMS post type
+const jsonLD = jsonLDGenerator({
+  type: frontmatter ? "post" : "website",
+  post: frontmatter,
+  url,
+});
+---
+
+<!-- SEO -->
+<link rel="canonical" href={url} />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Site Name" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={image?.src || siteData.image.src} />
+<meta property="og:image:url" content={image?.src || siteData.image.src} />
+<meta
+  property="og:image:secure_url"
+  content={image?.src || siteData.image.src}
+/>
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:alt" content={image?.alt || siteData.image.alt} />
+
+<!-- Twitter -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={image?.src || siteData.image.src} />
+<meta name="twitter:image:alt" content={title} />
+
+<!-- Using environment domain -->
+<meta name="twitter:domain" content={import.meta.env.SITE} />
+
+{robots && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- JSON LD -->
+<Fragment set:html={jsonLD} />
